@@ -20,28 +20,28 @@ import logic.MoveLogic;
 public class ComputerPlayer extends Player {
 	
 	/* ----- WEIGHTS ----- */
-	/** The weight of being able to skip. */
+	/** Nước đi này có thể ăn được. */
 	private static final double WEIGHT_SKIP = 25;
 	
-	/** The weight of being able to skip on next turn. */
+	/** Nếu đi nước này thì nước sau có thể ăn được. */
 	private static final double SKIP_ON_NEXT = 20;
 	
-	/** The weight associated with being safe then safe before and after. */
+	/** Quân cờ này đang an toàn (đ' có khả năng bị ăn trong nước tiếp theo) và nếu đi theo nước này thì quân cờ tiếp tục an toàn. */
 	private static final double SAFE_SAFE = 5;
 
-	/** The weight associated with being safe then unsafe before and after. */
+	/** Quân cờ đang an toàn và nếu đi theo nước này thì quân cờ bị ăn là cái chắc (NGU MỚI ĐI). */
 	private static final double SAFE_UNSAFE = -40;
 
-	/** The weight associated with being unsafe then safe before and after. */
+	/** Quân cờ đang ở trạng thái đ' an toàn (đang bị dí, đ' chạy là bị ăn) và nếu đi nước này thì đưa quân cờ về trạng thái an toàn. */
 	private static final double UNSAFE_SAFE = 40;
 
-	/** The weight associated with being unsafe then unsafe before and after. */
+	/** Hết cứu. */
 	private static final double UNSAFE_UNSAFE = -40;
 	
-	/** The weight of a checker being safe. */
+	/** Nước đi an toàn. */
 	private static final double SAFE = 3;
 	
-	/** The weight of a checker being unsafe. */
+	/** Nước đi đ' an toàn. */
 	private static final double UNSAFE = -5;
 	
 	/** The factor used to multiply some weights when the checker being

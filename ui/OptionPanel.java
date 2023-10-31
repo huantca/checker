@@ -136,7 +136,7 @@ public class OptionPanel extends JPanel {
 
 			// Handle the user action
 			JButton btn = null;
-			boolean isNetwork = false, isP1 = true;
+			boolean isNetwork = false;
 
 			if (src == restartBtn) {
 				window.restart();
@@ -148,7 +148,6 @@ public class OptionPanel extends JPanel {
 				Player player = getPlayer(player2Opts);
 				window.setPlayer2(player);
 				btn = player2Btn;
-				isP1 = false;
 			} else if (src == player1Btn) {
 				player1Net.setVisible(true);
 			} else if (src == player2Btn) {
